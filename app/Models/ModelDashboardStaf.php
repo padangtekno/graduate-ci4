@@ -38,4 +38,13 @@ class ModelDashboardStaf extends Model
             ->where('status_dokumen', 0)
             ->countAllResults();
     }
+
+    public function dataCalonWisudawan()
+    {
+        return $this->db->table('tbl_mahasiswa')
+            ->join('tbl_prodi', 'tbl_prodi.id_prodi=tbl_mahasiswa.id_prodi', 'LEFT')
+            ->where('status_pendaftaran', 2)
+            ->where('status_dokumen', 2)
+            ->get()->getResultArray();
+    }
 }

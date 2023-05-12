@@ -71,4 +71,15 @@ class DashboardStaf extends BaseController
         session()->setFlashdata('pesan', 'Pendaftaran Telah Berhasil Diverifikasi !');
         return redirect()->to('DashboardStaf/pendaftaranMasuk');
     }
+
+    public function calonWisudawan()
+    {
+        $data = [
+            'judul' => 'Calon Wisudawan',
+            'menu'  => 'calonwisudawan',
+            'page'  => 'staf/v_calon_wisudawan',
+            'mhs'   => $this->ModelDashboardStaf->dataCalonWisudawan(),
+        ];
+        return view('v_template_staf', $data);
+    }
 }
