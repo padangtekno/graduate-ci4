@@ -13,14 +13,17 @@
         <!-- /.card-header -->
         <div class="card-body">
 
+            <?php if ($mhs['status_pendaftaran'] == 2) { ?>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-ban"></i> Pendaftaran Anda Ditolak</h5>
+                    <p>Catatan : <br> <?= $mhs['ctt'] ?> </p>
+                </div>
+            <?php  } ?>
+
+           
+
             <?php
-
-            if (session()->getFlashdata('pesan')) {
-                echo '<div class="alert alert-success" role="alert">';
-                echo session()->getFlashdata('pesan');
-                echo '</div>';
-            }
-
             $error = validation_errors();
 
             ?>

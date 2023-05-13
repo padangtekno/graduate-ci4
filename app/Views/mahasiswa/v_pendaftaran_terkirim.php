@@ -12,6 +12,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+
             <?php
             if (session()->getFlashdata('pesan')) {
                 echo '<div class="alert alert-success alert-dismissible">
@@ -21,6 +22,19 @@
                 echo '</h5></div>';
             }
             ?>
+            <?php if ($mhs['status_pendaftaran'] == 1 and $mhs['status_dokumen'] == 0) { ?>
+                <div class="alert alert-primary alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-info"></i> Silahkan Menunggu Verifikasi Dokumen</h5>
+                </div>
+            <?php  } ?>
+
+            <?php if ($mhs['status_pendaftaran'] == 1 and $mhs['status_dokumen'] == 1) { ?>
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-check"></i> Pendaftaran Anda Diverifikasi</h5>
+                </div>
+            <?php  } ?>
             <table class="table table-borderless table-sm">
                 <h4 class="text-center"><b>Formulir Pendaftaran Wisuda</b></h4>
                 <tr>

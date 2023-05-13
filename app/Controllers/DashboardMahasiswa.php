@@ -22,4 +22,22 @@ class DashboardMahasiswa extends BaseController
         ];
         return view('v_template_mahasiswa', $data);
     }
+
+    public function skl()
+    {
+        $data = [
+            'judul' => 'Surat Keterangan Lulus',
+            'menu' => 'skl',
+            'page'  => 'mahasiswa/v_skl',
+            'mhs'   => $this->ModelPendaftaran->dataMahasiswa(),
+        ];
+        return view('v_template_mahasiswa', $data);
+    }
+    public function printSkl()
+    {
+        $data = [
+            'mhs'   => $this->ModelPendaftaran->dataMahasiswa(),
+        ];
+        return view('mahasiswa/v_print_skl', $data);
+    }
 }

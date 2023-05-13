@@ -43,8 +43,8 @@ class ModelDashboardStaf extends Model
     {
         return $this->db->table('tbl_mahasiswa')
             ->join('tbl_prodi', 'tbl_prodi.id_prodi=tbl_mahasiswa.id_prodi', 'LEFT')
-            ->where('status_pendaftaran', 2)
-            ->where('status_dokumen', 2)
+            ->where('status_pendaftaran', 1)
+            ->where('status_dokumen', 1)
             ->get()->getResultArray();
     }
 }

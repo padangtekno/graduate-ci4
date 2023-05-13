@@ -43,8 +43,17 @@ class Pendaftaran extends BaseController
                 'page'  => 'mahasiswa/v_pendaftaran_terkirim'
             ];
             return view('v_template_mahasiswa', $data);
-        } {
-            # code...
+        } elseif ($mhs['status_pendaftaran'] == 2) {
+            $data = [
+                'judul' => 'Pendaftaran Wisuda',
+                'menu' => 'pendaftaran',
+                'mhs' =>  $mhs,
+                'prodi' => $this->ModelProdi->allData(),
+                'persyaratan' => $this->ModelPendaftaran->allJenisDokumen(),
+                'dokumen' => $this->ModelPendaftaran->allDokumen(),
+                'page'  => 'mahasiswa/v_pendaftaran_wisuda'
+            ];
+            return view('v_template_mahasiswa', $data);
         }
     }
 

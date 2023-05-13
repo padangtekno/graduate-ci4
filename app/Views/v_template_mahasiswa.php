@@ -98,9 +98,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                         <li class="nav-item">
-                            <a href="<?= base_url('Persyaratan') ?>" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>Persyaratan</p>
+                            <a href="<?= base_url('DashboardMahasiswa/skl') ?>" class="nav-link <?= $menu == 'skl' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>SKL</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= base_url('DashboardMahasiswa/pengambilanIjazah') ?>" class="nav-link <?= $menu == 'pendaftaran' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-file-alt"></i>
+                                <p>Pengambilan Ijazah</p>
                             </a>
                         </li>
                     </ul>
