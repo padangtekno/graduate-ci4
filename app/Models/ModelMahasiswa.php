@@ -55,4 +55,10 @@ class ModelMahasiswa extends Model
             ->where('status_dokumen', 1)
             ->countAllResults();
     }
+
+    public function jumlahMahasiswa()
+    {
+        return $this->db->table('tbl_mahasiswa')
+            ->countAllResults();
+    }
 }

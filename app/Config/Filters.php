@@ -10,6 +10,7 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\FilterMahasiswa;
 use App\Filters\FilterStaf;
+use App\Filters\FilterDosen;
 
 class Filters extends BaseConfig
 {
@@ -25,6 +26,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'filtermahasiswa' => FilterMahasiswa::class,
         'filterstaf' => FilterStaf::class,
+        'filterdosen' => FilterDosen::class,
     ];
 
     /**
@@ -33,31 +35,38 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            'filtermahasiswa' => ['except' => [
-                'auth', 'auth/*',
-                'home', 'home/*',
-                '/'
-            ]],
-            'filterstaf' => ['except' => [
-                'auth', 'auth/*',
-                'home', 'home/*',
-                '/'
-            ]],
+            'filtermahasiswa' => [
+                'except' => [
+                    'auth', 'auth/*',
+                    'home', 'home/*',
+                    '/'
+                ]
+            ],
+            'filterstaf' => [
+                'except' => [
+                    'auth', 'auth/*',
+                    'home', 'home/*',
+                    '/'
+                ]
+            ],
         ],
         'after' => [
             'toolbar',
-            'filtermahasiswa' => ['except' => [
-                'auth', 'auth/*',
-                'home', 'home/*',
-                '/',
-                'DashboardMahasiswa', 'DashboardMahasiswa/*',
-                'Pendaftaran', 'Pendaftaran/*',
+            'filtermahasiswa' => [
+                'except' => [
+                    'auth', 'auth/*',
+                    'home', 'home/*',
+                    '/',
+                    'DashboardMahasiswa', 'DashboardMahasiswa/*',
+                    'Pendaftaran', 'Pendaftaran/*',
 
-            ]], 'filterstaf' => ['except' => [
+                ]
+            ], 'filterstaf' => ['except' => [
                 'auth', 'auth/*',
                 'home', 'home/*',
                 '/',
                 'DashboardStaf', 'DashboardStaf/*',
+                'Persyaratan', 'Persyaratan/*',
             ]],
         ],
     ];

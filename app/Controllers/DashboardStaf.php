@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ModelDashboardStaf;
 use App\Models\ModelPendaftaran;
+use App\Models\ModelMahasiswa;
 
 class DashboardStaf extends BaseController
 {
@@ -12,6 +13,7 @@ class DashboardStaf extends BaseController
     {
         $this->ModelDashboardStaf = new ModelDashboardStaf();
         $this->ModelPendaftaran = new ModelPendaftaran();
+        $this->ModelMahasiswa = new ModelMahasiswa();
     }
 
     public function index()
@@ -21,6 +23,8 @@ class DashboardStaf extends BaseController
             'menu'  => 'dashboard',
             'page'  => 'staf/v_dashboard',
             'jumlahPendaftaranMasuk' => $this->ModelDashboardStaf->jumlahPendaftaranMasuk(),
+            'jumlahWisudawan' => $this->ModelMahasiswa->jumlahWisudawan(),
+            'jumlahMahasiswa' => $this->ModelMahasiswa->jumlahMahasiswa(),
         ];
         return view('v_template_staf', $data);
     }
@@ -82,6 +86,4 @@ class DashboardStaf extends BaseController
         ];
         return view('v_template_staf', $data);
     }
-
-   
 }

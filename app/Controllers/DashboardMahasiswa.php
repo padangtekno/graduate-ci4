@@ -20,7 +20,8 @@ class DashboardMahasiswa extends BaseController
         $data = [
             'judul' => 'Dashboard Mahasiswa',
             'menu' => 'dashboard',
-            'page'  => 'mahasiswa/v_dashboard'
+            'page'  => 'mahasiswa/v_dashboard',
+            'mhs'   => $this->ModelPendaftaran->dataMahasiswa(),
         ];
         return view('v_template_mahasiswa', $data);
     }
@@ -153,6 +154,7 @@ class DashboardMahasiswa extends BaseController
                 'alamat' => $this->request->getPost('alamat'),
                 'no_hp' => $this->request->getPost('no_hp'),
                 'id_prodi' => $this->request->getPost('id_prodi'),
+                'jenjang' => $this->request->getPost('jenjang'),
                 'ipk' => $this->request->getPost('ipk'),
                 'tgl_lulus' => $this->request->getPost('tgl_lulus'),
                 'nama_ayah' => $this->request->getPost('nama_ayah'),

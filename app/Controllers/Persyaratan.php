@@ -16,10 +16,11 @@ class Persyaratan extends BaseController
     {
         $data = [
             'judul' => 'Persyaratan',
-            'page'  => 'tendik/v_persyaratan',
+            'menu' => 'persyaratan',
+            'page'  => 'staf/v_persyaratan',
             'persyaratan' => $this->ModelPersyaratan->allData(),
         ];
-        return view('v_template_tendik', $data);
+        return view('v_template_staf', $data);
     }
 
     public function insertData()

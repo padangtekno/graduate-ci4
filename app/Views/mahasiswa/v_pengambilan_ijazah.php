@@ -89,7 +89,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="form-group">
                         <label>Program Studi</label>
                         <select name="id_prodi" class="form-control">
@@ -100,14 +100,21 @@
                         <p class="text-danger"><?= isset($error['id_prodi']) == isset($error['id_prodi']) ? validation_show_error('id_prodi') : '' ?></p>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Jenjang</label>
+                        <input name="jenjang" value="<?= $mhs['jenjang'] ?>" class="form-control" placeholder="Jenjang">
+                        <p class="text-danger"><?= isset($error['jenjang']) == isset($error['jenjang']) ? validation_show_error('jenjang') : '' ?></p>
+                    </div>
+                </div>
+                <div class="col-sm-34">
                     <div class="form-group">
                         <label>IPK</label>
                         <input name="ipk" value="<?= $mhs['ipk'] ?>" class="form-control" placeholder="IPK">
                         <p class="text-danger"><?= isset($error['ipk']) == isset($error['ipk']) ? validation_show_error('ipk') : '' ?></p>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="form-group">
                         <label>Tanggal Lulus</label>
                         <input type="date" name="tgl_lulus" value="<?= $mhs['tgl_lulus'] ?>" class="form-control" placeholder="Pembimbing 1">

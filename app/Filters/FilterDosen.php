@@ -25,7 +25,10 @@ class FilterDosen implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        //
+        if (session()->get('level') == '') {
+            session()->setFlashdata('pesan', 'Anda Belum Login, Silahkan Login Dulu !!!');
+            return redirect()->to('Auth/login');
+        }
     }
 
     /**
@@ -42,6 +45,8 @@ class FilterDosen implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
+        if (session()->get('level') == 'D') {
+            return redirect()->to('DashboardDosen');
+        }
     }
 }

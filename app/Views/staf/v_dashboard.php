@@ -17,7 +17,7 @@
     <!-- small box -->
     <div class="small-box bg-info">
         <div class="inner">
-            <h3>150</h3>
+            <h3><?= $jumlahMahasiswa ?></h3>
 
             <p>Mahasiswa</p>
         </div>
@@ -32,9 +32,9 @@
     <!-- small box -->
     <div class="small-box bg-success">
         <div class="inner">
-            <h3>53<sup style="font-size: 20px"></sup></h3>
+            <h3><?= $jumlahWisudawan ?><sup style="font-size: 20px"></sup></h3>
 
-            <p>Calon Wisuda</p>
+            <p>Wisudawan</p>
         </div>
         <div class="icon">
             <i class="fas fa-user-graduate"></i>

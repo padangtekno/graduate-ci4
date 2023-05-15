@@ -198,7 +198,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('Persyaratan') ?>" class="nav-link">
+                            <a href="<?= base_url('Persyaratan') ?>" class="nav-link <?= $menu == 'persyaratan' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>Persyaratan</p>
                             </a>
@@ -266,7 +266,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; <?= date('Y') ?> <a href="<?= base_url() ?>">The Graduate</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->

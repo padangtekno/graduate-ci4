@@ -63,6 +63,16 @@ class Auth extends BaseController
                 }
             } elseif ($level == 'D') {
                 # jika login Dosen
+                $cek_login = $this->ModelAuth->loginDosen($username, $password);
+                if ($cek_login) {
+                    session()->set('nidn', $cek_login['nidn']);
+                    session()->set('nama_dosen', $cek_login['nama_dosen']);
+                    session()->set('level', 'D');
+                    return redirect()->to('DashboardDosen');
+                } else {
+                    session()->setFlashdata('gagal', 'Username Atau Password Salah !');
+                    return redirect()->to('Auth/login');
+                }
             } elseif ($level == 'M') {
                 # jika login Mahasiswa
                 $cek_login = $this->ModelAuth->loginMahasiswa($username, $password);
