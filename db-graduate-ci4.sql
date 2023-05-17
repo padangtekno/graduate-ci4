@@ -11,7 +11,7 @@
  Target Server Version : 50740 (5.7.40)
  File Encoding         : 65001
 
- Date: 14/05/2023 23:04:05
+ Date: 16/05/2023 17:53:11
 */
 
 SET NAMES utf8mb4;
@@ -94,7 +94,7 @@ CREATE TABLE `tbl_mahasiswa`  (
 -- ----------------------------
 -- Records of tbl_mahasiswa
 -- ----------------------------
-INSERT INTO `tbl_mahasiswa` VALUES (1, '20220331', '11111111111111', 'ANANTI FAJAR MENTARI M', 'Padang', '2023-05-10', 'P', 'Islam', '2', NULL, '2023-06-03', 'Analisis Sentimen pada Data Media Sosial menggunakan Metode Natural Language Processing', '3.58', '146', 'Jl. Imam Bonjol No. 11', 'ananti@gmail.comc', '08522356652', '1683812059_a1c70f99dc206683403f.jpg', '08522356652', 1, 1, 'Pembimbing 1', 'Pembimbing 2', '2023-01-01', '20220331', 'dokumen belum lengkap harap lengkapi Lagi Dokumen dan kirim kembali Pendaftaran', NULL, 'Ayah', 'Ibu', 'Jl. Imam Bonjol No. 11', '08228392');
+INSERT INTO `tbl_mahasiswa` VALUES (1, '20220331', '11111111111111', 'ANANTI FAJAR MENTARI M', 'Padang', '2023-05-10', 'P', 'Islam', '2', 'Strata 1', '2023-06-03', 'Analisis Sentimen pada Data Media Sosial menggunakan Metode Natural Language Processing', '3.58', '146', 'Jl. Imam Bonjol No. 11', 'ananti@gmail.comc', '08522356652', '1683812059_a1c70f99dc206683403f.jpg', '08522356652', 1, 1, 'Pembimbing 1', 'Pembimbing 2', '2023-01-01', '20220331', 'dokumen belum lengkap harap lengkapi Lagi Dokumen dan kirim kembali Pendaftaran', NULL, 'Ayah', 'Ibu', 'Jl. Imam Bonjol No. 11', '08228392');
 INSERT INTO `tbl_mahasiswa` VALUES (2, '20220411', NULL, 'ANGGI AULIA', NULL, NULL, 'L', NULL, '1', NULL, '2023-06-03', 'Pengembangan Sistem Pendeteksi Intrusi pada Jaringan Komputer Menggunakan Algoritma Machine Learning', '3.17', '150', NULL, NULL, NULL, 'foto.jpg', NULL, 1, 1, NULL, NULL, NULL, '20220411', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `tbl_mahasiswa` VALUES (3, '20220175', NULL, 'ARINI', NULL, NULL, 'P', NULL, '1', NULL, '2023-06-03', 'Perancangan Sistem Informasi Geografis untuk Pemetaan Bencana Alam', '3.82', '160', NULL, NULL, NULL, 'foto.jpg', NULL, 1, 1, NULL, NULL, NULL, '20220175', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `tbl_mahasiswa` VALUES (4, '20220027', NULL, 'ASIH ANDRIANI', NULL, NULL, 'P', NULL, '1', NULL, '2023-06-03', 'Pengenalan Pola Wajah dengan Pendekatan Deep Learning', '3.6', '148', NULL, NULL, NULL, 'foto.jpg', NULL, 1, 1, NULL, NULL, NULL, '20220027', NULL, NULL, NULL, NULL, NULL, NULL);

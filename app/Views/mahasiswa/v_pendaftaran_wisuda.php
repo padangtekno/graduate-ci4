@@ -21,9 +21,17 @@
                 </div>
             <?php  } ?>
 
-           
+
 
             <?php
+
+            if (session()->getFlashdata('pesan')) {
+                echo '<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h5><i class="icon fas fa-check"></i>';
+                echo session()->getFlashdata('pesan');
+                echo '</h5></div>';
+            }
             $error = validation_errors();
 
             ?>
@@ -161,16 +169,26 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label>Pembimbing 1</label>
-                                <input name="pembimbing_utama" value="<?= $mhs['pembimbing_utama'] ?>" class="form-control" placeholder="Pembimbing 1">
-                                <p class="text-danger"><?= isset($error['pembimbing_utama']) == isset($error['pembimbing_utama']) ? validation_show_error('pembimbing_utama') : '' ?></p>
+                                <label>Pembimbing Ilmu</label>
+                                <select name="pembimbing_ilmu" class="form-control">
+                                    <option value="">--Pilih Pembimbing--</option>
+                                    <?php foreach ($dosen as $key => $value) { ?>
+                                        <option value="<?= $value['nama_dosen'] ?>" <?= $value['nama_dosen'] == $mhs['pembimbing_ilmu']  ? 'selected' : '' ?>><?= $value['nama_dosen'] ?></option>
+                                    <?php  } ?>
+                                </select>
+                                <p class="text-danger"><?= isset($error['pembimbing_ilmu']) == isset($error['pembimbing_ilmu']) ? validation_show_error('pembimbing_ilmu') : '' ?></p>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label>Pembimping 2</label>
-                                <input name="pembimbing_kedua" value="<?= $mhs['pembimbing_kedua'] ?>" class="form-control" placeholder="Pembimbing 2">
-                                <p class="text-danger"><?= isset($error['pembimbing_kedua']) == isset($error['pembimbing_kedua']) ? validation_show_error('pembimbing_kedua') : '' ?></p>
+                                <label>Pembimbing Agama</label>
+                                <select name="pembimbing_agama" class="form-control">
+                                    <option value="">--Pilih Pembimbing--</option>
+                                    <?php foreach ($dosen as $key => $value) { ?>
+                                        <option value="<?= $value['nama_dosen'] ?>" <?= $value['nama_dosen'] == $mhs['pembimbing_agama']  ? 'selected' : '' ?>><?= $value['nama_dosen'] ?></option>
+                                    <?php  } ?>
+                                </select>
+                                <p class="text-danger"><?= isset($error['pembimbing_agama']) == isset($error['pembimbing_agama']) ? validation_show_error('pembimbing_agama') : '' ?></p>
                             </div>
                         </div>
 

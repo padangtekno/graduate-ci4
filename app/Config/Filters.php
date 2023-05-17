@@ -67,6 +67,10 @@ class Filters extends BaseConfig
                 '/',
                 'DashboardStaf', 'DashboardStaf/*',
                 'Persyaratan', 'Persyaratan/*',
+                'Dosen', 'Dosen/*',
+                'Mahasiswa', 'Mahasiswa/*',
+                'Staf', 'Staf/*',
+                'BeritaAcara', 'BeritaAcara/*',
             ]],
         ],
     ];

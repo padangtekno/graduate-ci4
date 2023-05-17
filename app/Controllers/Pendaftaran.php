@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ModelPendaftaran;
 use App\Models\ModelProdi;
 use App\Models\ModelPersyaratan;
+use App\Models\ModelDosen;
 
 class Pendaftaran extends BaseController
 {
@@ -15,6 +16,7 @@ class Pendaftaran extends BaseController
         $this->ModelPendaftaran = new ModelPendaftaran();
         $this->ModelProdi = new ModelProdi();
         $this->ModelPersyaratan = new ModelPersyaratan();
+        $this->ModelDosen = new ModelDosen();
     }
 
     public function index()
@@ -26,6 +28,7 @@ class Pendaftaran extends BaseController
                 'judul' => 'Pendaftaran Wisuda',
                 'menu' => 'pendaftaran',
                 'mhs' =>  $mhs,
+                'dosen' => $this->ModelDosen->allData(),
                 'prodi' => $this->ModelProdi->allData(),
                 'persyaratan' => $this->ModelPendaftaran->allJenisDokumen(),
                 'dokumen' => $this->ModelPendaftaran->allDokumen(),
@@ -38,6 +41,7 @@ class Pendaftaran extends BaseController
                 'menu' => 'pendaftaran',
                 'mhs' =>  $mhs,
                 'prodi' => $this->ModelProdi->allData(),
+                'dosen' => $this->ModelDosen->allData(),
                 'persyaratan' => $this->ModelPendaftaran->allJenisDokumen(),
                 'dokumen' => $this->ModelPendaftaran->allDokumen(),
                 'page'  => 'mahasiswa/v_pendaftaran_terkirim'
@@ -49,6 +53,7 @@ class Pendaftaran extends BaseController
                 'menu' => 'pendaftaran',
                 'mhs' =>  $mhs,
                 'prodi' => $this->ModelProdi->allData(),
+                'dosen' => $this->ModelDosen->allData(),
                 'persyaratan' => $this->ModelPendaftaran->allJenisDokumen(),
                 'dokumen' => $this->ModelPendaftaran->allDokumen(),
                 'page'  => 'mahasiswa/v_pendaftaran_wisuda'
@@ -144,14 +149,14 @@ class Pendaftaran extends BaseController
                 'errors' => [
                     'required' => '{field} Wajib Diisi !'
                 ]
-            ], 'pembimbing_utama' => [
-                'label' => 'Pembimbing 1',
+            ], 'pembimbing_ilmu' => [
+                'label' => 'Pembimbing Ilmu',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !'
                 ]
-            ], 'pembimbing_kedua' => [
-                'label' => 'Pembimbing 2',
+            ], 'pembimbing_agama' => [
+                'label' => 'Pembimbing Agama',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !'
@@ -203,8 +208,8 @@ class Pendaftaran extends BaseController
                 'total_sks' => $this->request->getPost('total_sks'),
                 'ipk' => $this->request->getPost('ipk'),
                 'judul_skripsi' => $this->request->getPost('judul_skripsi'),
-                'pembimbing_utama' => $this->request->getPost('pembimbing_utama'),
-                'pembimbing_kedua' => $this->request->getPost('pembimbing_kedua'),
+                'pembimbing_ilmu' => $this->request->getPost('pembimbing_ilmu'),
+                'pembimbing_agama' => $this->request->getPost('pembimbing_agama'),
                 'tgl_lulus' => $this->request->getPost('tgl_lulus'),
                 'tgl_wisuda' => $this->request->getPost('tgl_wisuda'),
                 'foto' => $nama_file,

@@ -21,6 +21,7 @@ class DashboardStaf extends BaseController
         $data = [
             'judul' => 'Dashboard Staf',
             'menu'  => 'dashboard',
+            'submenu'  => '',
             'page'  => 'staf/v_dashboard',
             'jumlahPendaftaranMasuk' => $this->ModelDashboardStaf->jumlahPendaftaranMasuk(),
             'jumlahWisudawan' => $this->ModelMahasiswa->jumlahWisudawan(),
@@ -34,6 +35,7 @@ class DashboardStaf extends BaseController
         $data = [
             'judul' => 'Pendaftaran Masuk',
             'menu'  => 'pendaftaranmasuk',
+            'submenu'  => '',
             'page'  => 'staf/v_pendaftaran_masuk',
             'mhs'   => $this->ModelDashboardStaf->dataPendaftaranMasuk(),
         ];
@@ -45,6 +47,7 @@ class DashboardStaf extends BaseController
         $data = [
             'judul' => 'Cek Pendaftaran Masuk',
             'menu'  => 'pendaftaranmasuk',
+            'submenu'  => '',
             'page'  => 'staf/v_cek_pendaftaran_masuk',
             'mhs'   => $this->ModelDashboardStaf->cekPendaftaranMasuk($npm),
             'dokumen'   => $this->ModelDashboardStaf->allDokumen($npm),
@@ -81,6 +84,7 @@ class DashboardStaf extends BaseController
         $data = [
             'judul' => 'Calon Wisudawan',
             'menu'  => 'calonwisudawan',
+            'submenu'  => '',
             'page'  => 'staf/v_calon_wisudawan',
             'mhs'   => $this->ModelDashboardStaf->dataCalonWisudawan(),
         ];
