@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelBeritaAcara;
+use App\Models\ModelDosen;
 
 class BeritaAcara extends BaseController
 {
@@ -12,16 +13,18 @@ class BeritaAcara extends BaseController
     {
 
         $this->ModelBeritaAcara = new ModelBeritaAcara();
+        $this->ModelDosen = new ModelDosen();
     }
 
     public function index()
     {
         $data = [
-            'judul' => 'Berita Acara',
+            'judul' => 'Berita Acara Ujian Skripsi',
             'menu'  => 'beritaacara',
             'submenu'  => '',
             'page'  => 'staf/beritaacara/v_daftar_mahasiswa',
             'mhs'   => $this->ModelBeritaAcara->allDataMahasiswa(),
+            'dosen' => $this->ModelDosen->allData(),
         ];
         return view('v_template_staf', $data);
     }

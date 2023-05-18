@@ -17,6 +17,7 @@ class Persyaratan extends BaseController
         $data = [
             'judul' => 'Persyaratan',
             'menu' => 'persyaratan',
+            'submenu' => 'persyaratan',
             'page'  => 'staf/v_persyaratan',
             'persyaratan' => $this->ModelPersyaratan->allData(),
         ];
