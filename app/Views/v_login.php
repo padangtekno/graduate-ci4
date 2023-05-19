@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <select name="level" class="form-control">
                         <option value="">-- Hak Akses --</option>
-                        <option value="S">Staff</option>
+                        <option value="S">Staf</option>
                         <option value="D">Dosen</option>
                         <option value="M">Mahasiswa</option>
                     </select>

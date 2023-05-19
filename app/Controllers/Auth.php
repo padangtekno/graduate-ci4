@@ -100,6 +100,7 @@ class Auth extends BaseController
         session()->remove('npm');
         session()->remove('nidn');
         session()->remove('foto');
+        session()->destroy();
         session()->setFlashdata('pesan', 'Logout Sukses !!');
         return redirect()->to('Auth/login');
     }
