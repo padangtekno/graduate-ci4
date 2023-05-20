@@ -55,6 +55,7 @@ class BeritaAcara extends BaseController
             'ketua_komisi_penguji' => $this->request->getPost('ketua_komisi_penguji'),
             'hasil_ujian_huruf' => $this->request->getPost('hasil_ujian_huruf'),
             'hasil_ujian_angka' => $this->request->getPost('hasil_ujian_angka'),
+            'tempat' => $this->request->getPost('tempat'),
         ];
         $this->ModelBeritaAcara->updateBeritaAcara($data);
         session()->setFlashdata('pesan', 'Data Berhasil Diupdate !!');
@@ -66,7 +67,7 @@ class BeritaAcara extends BaseController
     {
         $data = [
             'judul' => 'CetakBerita Acara',
-
+            'mhs'   => $this->ModelBeritaAcara->detailDataMahasiswa($id_mahasiswa),
         ];
         return view('staf/beritaacara/v_cetak_berita_acara', $data);
     }

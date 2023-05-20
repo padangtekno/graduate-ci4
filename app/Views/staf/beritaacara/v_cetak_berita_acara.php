@@ -29,9 +29,100 @@
     <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
     <section class="sheet padding-10mm">
         <article><img src="<?= base_url('yarsi.png') ?>" width="225px"></article>
-        <h3 style="text-align: center;"><b>BERITA ACARA UJIAN SKRIPSI</b></h3><br>
+        <h3 style="text-align: center;"><b>BERITA ACARA UJIAN SKRIPSI</b></h3>
+        <p>Yang bertanda tangan di bawah ini Komisi Penguji Skripsi Program Studi Teknik Informatika Program
+            Sarjana Fakultas Teknologi Informasi Universitas YARSI dengan ini menyatakan dengan sebenarnya bahwa
+            pada:</p>
 
-
+        <table>
+            <tr>
+                <td>Tanggal</td>
+                <td>:</td>
+                <td><?= date('d F Y', strtotime($mhs['tgl_ujian'])) ?></td>
+            </tr>
+            <tr>
+                <td>Jam</td>
+                <td>:</td>
+                <td><?= $mhs['jam_ujian'] ?></td>
+            </tr>
+            <tr>
+                <td>Bertempat di</td>
+                <td>:</td>
+                <td><?= $mhs['tempat'] ?></td>
+            </tr>
+        </table>
+        <p>Telah menyelengarakan Ujian Skripsi terhadap mahasiswa:</p>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><?= $mhs['nama_mahasiswa'] ?></td>
+            </tr>
+            <tr>
+                <td>NPM</td>
+                <td>:</td>
+                <td><?= $mhs['npm'] ?></td>
+            </tr>
+            <tr>
+                <td>Program Studi</td>
+                <td>:</td>
+                <td><?= $mhs['nama_prodi'] ?></td>
+            </tr>
+        </table>
+        <p>Dengan judul : <b>"<?= $mhs['judul_skripsi'] ?>"</b></p>
+        <table>
+            <tr>
+                <td>Hasil ujian dengan kualifikasi: </td>
+                <td style="border: 1px solid #999; padding: 8px 20px;">
+                    <h2><?= $mhs['hasil_ujian_huruf'] ?></h2>
+                </td>
+                <td style="border: 1px solid #999; padding: 8px 20px;">
+                    <h2><?= $mhs['hasil_ujian_angka'] ?></h2>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <center>Jakarta, <?= date('d M Y') ?></center>
+        <center>Ketua Komisi Penguji</center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center><b>(<?= $mhs['ketua_komisi_penguji'] ?>)</b></center>
+        <br>
+        <table style="text-align: center;" width="100%">
+            <tr>
+                <td>Penguji Murni</td>
+                <td>Pembimbing Ilmu / Penguji</td>
+                <td>Pembimbing Agama / Penguji</td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <b>(<?= $mhs['penguji_murni'] ?>)</b>
+                </td>
+                <td>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <b>(<?= $mhs['pembimbing_ilmu'] ?>)</b>
+                </td>
+                <td>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <b>(<?= $mhs['pembimbing_agama'] ?>)</b>
+                </td>
+            </tr>
+        </table>
     </section>
 </body>
 

@@ -114,6 +114,13 @@
                     </div>
                 </div>
 
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Bertempat Di</label>
+                        <input name="tempat" value="<?= $mhs['tempat'] ?>" class="form-control" placeholder="Bertempat Di" required>
+                    </div>
+                </div>
+
             </div>
             <button class="btn btn-primary btn-flat btn-sm">Simpan</button>
             <a href="<?= base_url('BeritaAcara') ?>" class="btn btn-success btn-flat btn-sm">Kembali</a>
