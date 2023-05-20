@@ -34,37 +34,37 @@
             Sarjana Fakultas Teknologi Informasi Universitas YARSI dengan ini menyatakan dengan sebenarnya bahwa
             pada:</p>
 
-        <table>
+        <table style="font-weight: bold;">
             <tr>
-                <td>Tanggal</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tanggal</td>
                 <td>:</td>
                 <td><?= date('d F Y', strtotime($mhs['tgl_ujian'])) ?></td>
             </tr>
             <tr>
-                <td>Jam</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jam</td>
                 <td>:</td>
                 <td><?= $mhs['jam_ujian'] ?></td>
             </tr>
             <tr>
-                <td>Bertempat di</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bertempat di</td>
                 <td>:</td>
                 <td><?= $mhs['tempat'] ?></td>
             </tr>
         </table>
         <p>Telah menyelengarakan Ujian Skripsi terhadap mahasiswa:</p>
-        <table>
+        <table style="font-weight: bold;">
             <tr>
-                <td>Nama</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nama</td>
                 <td>:</td>
                 <td><?= $mhs['nama_mahasiswa'] ?></td>
             </tr>
             <tr>
-                <td>NPM</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPM</td>
                 <td>:</td>
                 <td><?= $mhs['npm'] ?></td>
             </tr>
             <tr>
-                <td>Program Studi</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Program Studi</td>
                 <td>:</td>
                 <td><?= $mhs['nama_prodi'] ?></td>
             </tr>

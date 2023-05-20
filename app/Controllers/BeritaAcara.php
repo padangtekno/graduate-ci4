@@ -66,9 +66,18 @@ class BeritaAcara extends BaseController
     public function cetakBeritaAcara($id_mahasiswa)
     {
         $data = [
-            'judul' => 'CetakBerita Acara',
+            'judul' => 'Cetak Berita Acara',
             'mhs'   => $this->ModelBeritaAcara->detailDataMahasiswa($id_mahasiswa),
         ];
         return view('staf/beritaacara/v_cetak_berita_acara', $data);
+    }
+
+    public function cetakSuratTugas($id_mahasiswa)
+    {
+        $data = [
+            'judul' => 'Cetak Berita Acara',
+            'mhs'   => $this->ModelBeritaAcara->detailDataMahasiswa($id_mahasiswa),
+        ];
+        return view('staf/beritaacara/v_cetak_surat_tugas', $data);
     }
 }

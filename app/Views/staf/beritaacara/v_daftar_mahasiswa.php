@@ -24,34 +24,52 @@
             }
 
             ?>
-            <table class="table table-sm table-bordered">
-                <tr class="text-center">
-                    <th width="50px">NO</th>
-                    <th>NPM</th>
-                    <th>Nama Mahasiswa</th>
-                    <th>Program Studi</th>
-                    <th>Pembimbing Ilmu</th>
-                    <th>Pembimbing Agama</th>
-                    <th>Aksi</th>
-                </tr>
-                <?php $no = 1;
-                foreach ($mhs as $key => $value) {                     ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td class="text-center"><?= $value['npm'] ?></td>
-                        <td><?= $value['nama_mahasiswa'] ?></td>
-                        <td><?= $value['nama_prodi'] ?></td>
-                        <td><?= $value['pembimbing_ilmu'] ?></td>
-                        <td><?= $value['pembimbing_agama'] ?></td>
-                        <td class="text-center">
-                            <a href="<?= base_url('BeritaAcara/editBeritaAcara/' . $value['id_mahasiswa']) ?>" class="btn btn-flat btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="<?= base_url('BeritaAcara/cetakBeritaAcara/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-sm btn-success"><i class="fas fa-print"></i></a>
-                        </td>
+            <table id="example1" class="table table-sm table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th width="50px">NO</th>
+                        <th>NPM</th>
+                        <th>Nama Mahasiswa</th>
+                        <th>Program Studi</th>
+                        <th>Aksi</th>
+                        <th>Print</th>
                     </tr>
-                <?php } ?>
+                </thead>
+                <tbody>
+                    <?php $no = 1;
+                    foreach ($mhs as $key => $value) {                     ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td class="text-center"><?= $value['npm'] ?></td>
+                            <td><?= $value['nama_mahasiswa'] ?></td>
+                            <td><?= $value['nama_prodi'] ?></td>
+                            <td class="text-center">
+                                <a href="<?= base_url('BeritaAcara/editBeritaAcara/' . $value['id_mahasiswa']) ?>" class="btn btn-flat btn-xs btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                            </td>
+                            <td class="text-center">
+                                <a href="<?= base_url('BeritaAcara/cetakBeritaAcara/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-success"><i class="fas fa-print"></i> Berita Acara</a>
+                                <a href="<?= base_url('BeritaAcara/cetakUndangan/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-primary"><i class="fas fa-print"></i> Undangan</a>
+                                <a href="<?= base_url('BeritaAcara/cetakSuratTugas/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info"><i class="fas fa-print"></i> Surat Tugas</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
         </div>
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
 </div>
+
+
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "paging": true,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script>
