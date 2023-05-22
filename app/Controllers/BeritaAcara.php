@@ -80,4 +80,13 @@ class BeritaAcara extends BaseController
         ];
         return view('staf/beritaacara/v_cetak_surat_tugas', $data);
     }
+
+    public function cetakUndangan($id_mahasiswa)
+    {
+        $data = [
+            'judul' => 'Cetak Berita Acara',
+            'mhs'   => $this->ModelBeritaAcara->detailDataMahasiswa($id_mahasiswa),
+        ];
+        return view('staf/beritaacara/v_cetak_undangan', $data);
+    }
 }

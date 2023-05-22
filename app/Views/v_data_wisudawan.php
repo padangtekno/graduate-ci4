@@ -98,15 +98,15 @@
                 </tr>
                 <tr>
 
-                    <th>Pembimbing 1</th>
+                    <th>Pembimbing Ilmu</th>
                     <th class="text-center">:</th>
-                    <td><?= $mhs['pembimbing_utama'] ?></td>
+                    <td><?= $mhs['pembimbing_ilmu'] ?></td>
                 </tr>
                 <tr>
 
-                    <th>Pembimbing 2</th>
+                    <th>Pembimbing Agama</th>
                     <th class="text-center">:</th>
-                    <td><?= $mhs['pembimbing_kedua'] ?></td>
+                    <td><?= $mhs['pembimbing_agama'] ?></td>
                 </tr>
                 <tr>
 
