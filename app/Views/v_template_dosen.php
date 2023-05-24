@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
                     <div class="info">
-                        <a href="#" class="d-block"><b><?= session()->get('nama_mahasiswa') ?></b></a>
+                        <a href="#" class="d-block"><b><?= session()->get('nama_dosen') ?></b></a>
                     </div>
                 </div>
 
@@ -83,24 +83,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="<?= base_url('DashboardMahasiswa') ?>" class="nav-link <?= $menu == 'dashboard' ? 'active' : '' ?>">
+                            <a href="<?= base_url('DashboardDosen') ?>" class="nav-link <?= $menu == 'dashboard' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('Pendaftaran') ?>" class="nav-link <?= $menu == 'pendaftaran' ? 'active' : '' ?>">
+                            <a href="<?= base_url('DashboardDosen/mahasiswaBimbingan') ?>" class="nav-link <?= $menu == 'bimbingan' ? 'active' : '' ?>">
                                 <i class="nav-icon fab fa-wpforms"></i>
-                                <p>Pendaftaran</p>
+                                <p>Mahasiswa Bimbingan</p>
                             </a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a href="<?= base_url('DashboardMahasiswa/skl') ?>" class="nav-link <?= $menu == 'skl' ? 'active' : '' ?>">
+                            <a href="<?= base_url('DashboardDosen/suratTugas') ?>" class="nav-link <?= $menu == 'surattugas' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-file"></i>
-                                <p>SKL</p>
+                                <p>Surat Tugas</p>
                             </a>
                         </li>
 

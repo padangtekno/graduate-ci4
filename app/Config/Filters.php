@@ -61,7 +61,7 @@ class Filters extends BaseConfig
             'filtermahasiswa' => [
                 'except' => [
                     'auth', 'auth/*',
-                    'home', 'home/*',
+                    'Home', 'Home/*',
                     '/',
                     'DashboardMahasiswa', 'DashboardMahasiswa/*',
                     'Pendaftaran', 'Pendaftaran/*',
@@ -69,8 +69,8 @@ class Filters extends BaseConfig
             ],
             'filterstaf' => [
                 'except' => [
-                    'auth', 'auth/*',
-                    'home', 'home/*',
+                    'Auth', 'Auth/*',
+                    'Home', 'Home/*',
                     '/',
                     'DashboardStaf', 'DashboardStaf/*',
                     'Persyaratan', 'Persyaratan/*',
@@ -78,12 +78,13 @@ class Filters extends BaseConfig
                     'Mahasiswa', 'Mahasiswa/*',
                     'Staf', 'Staf/*',
                     'BeritaAcara', 'BeritaAcara/*',
+                    'Tendik', 'Tendik/*',
                 ]
             ],
             'filterdosen' => [
                 'except' => [
-                    'auth', 'auth/*',
-                    'home', 'home/*',
+                    'Auth', 'Auth/*',
+                    'Home', 'Home/*',
                     '/',
                     'DashboardDosen', 'DashboardDosen/*',
                 ]

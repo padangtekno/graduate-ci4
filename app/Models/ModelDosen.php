@@ -30,4 +30,10 @@ class ModelDosen extends Model
             ->where('id_dosen', $data['id_dosen'])
             ->update($data);
     }
+
+    public function jumlahDosen()
+    {
+        return $this->db->table('tbl_dosen')
+            ->countAllResults();
+    }
 }

@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ModelDashboardStaf;
 use App\Models\ModelPendaftaran;
 use App\Models\ModelMahasiswa;
+use App\Models\ModelDosen;
 
 class DashboardStaf extends BaseController
 {
@@ -14,6 +15,7 @@ class DashboardStaf extends BaseController
         $this->ModelDashboardStaf = new ModelDashboardStaf();
         $this->ModelPendaftaran = new ModelPendaftaran();
         $this->ModelMahasiswa = new ModelMahasiswa();
+        $this->ModelDosen = new ModelDosen();
     }
 
     public function index()
@@ -26,6 +28,7 @@ class DashboardStaf extends BaseController
             'jumlahPendaftaranMasuk' => $this->ModelDashboardStaf->jumlahPendaftaranMasuk(),
             'jumlahWisudawan' => $this->ModelMahasiswa->jumlahWisudawan(),
             'jumlahMahasiswa' => $this->ModelMahasiswa->jumlahMahasiswa(),
+            'jumlahdosen' => $this->ModelDosen->jumlahDosen(),
         ];
         return view('v_template_staf', $data);
     }

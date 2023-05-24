@@ -175,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="<?= base_url('Tendik') ?>" class="nav-link <?= $submenu == 'tendik' ? ' active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tendik</p>
                                     </a>
