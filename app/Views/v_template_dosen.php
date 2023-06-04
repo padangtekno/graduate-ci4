@@ -89,13 +89,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="<?= base_url('DashboardDosen/mahasiswaBimbingan') ?>" class="nav-link <?= $menu == 'bimbingan' ? 'active' : '' ?>">
-                                <i class="nav-icon fab fa-wpforms"></i>
-                                <p>Mahasiswa Bimbingan</p>
-                            </a>
-                        </li>
-
 
                         <li class="nav-item">
                             <a href="<?= base_url('DashboardDosen/suratTugas') ?>" class="nav-link <?= $menu == 'surattugas' ? 'active' : '' ?>">
@@ -105,11 +98,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('DashboardMahasiswa/pengambilanIjazah') ?>" class="nav-link <?= $menu == 'ijazah' ? 'active' : '' ?>">
+                            <a href="<?= base_url('DashboardDosen/suratUndangan') ?>" class="nav-link <?= $menu == 'suratundangan' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-file-alt"></i>
-                                <p>Pengambilan Ijazah</p>
+                                <p>Surat Undangan</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="<?= base_url('DashboardDosen/beritaAcara') ?>" class="nav-link <?= $menu == 'beritaacara' ? 'active' : '' ?>">
+                                <i class="nav-icon fab fa-wpforms"></i>
+                                <p>Berita Acara</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

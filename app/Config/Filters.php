@@ -45,14 +45,14 @@ class Filters extends BaseConfig
             'filterstaf' => [
                 'except' => [
                     'auth', 'auth/*',
-                    'home', 'home/*',
+                    'Home', 'Home/*',
                     '/'
                 ]
             ],
             'filterdosen' => [
                 'except' => [
                     'auth', 'auth/*',
-                    'home', 'home/*',
+                    'Home', 'Home/*',
                     '/'
                 ]
             ],

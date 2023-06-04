@@ -36,9 +36,9 @@
 
         <p>
             Kepada Yth <br>
-            <?= $mhs['penguji_murni'] ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Penguji Murni / Ketua Komisi Penguji <br>
-            <?= $mhs['pembimbing_ilmu'] ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Pembimbing Ilmu / Penguji <br>
-            <?= $mhs['pembimbing_agama'] ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pembimbing Agama / Penguji <br>
+            <?= $mhs['penguji_murni'] ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Penguji Murni / Ketua Komisi Penguji <br>
+            <?= $mhs['pembimbing_ilmu'] ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Pembimbing Ilmu / Penguji <br>
+            <?= $mhs['pembimbing_agama'] ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pembimbing Agama / Penguji <br>
         </p>
         <p>di <br> Universitas YARSI</p>
         <p>

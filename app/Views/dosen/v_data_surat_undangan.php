@@ -30,22 +30,11 @@
                             <td><?= $value['nama_mahasiswa'] ?></td>
                             <td><?= $value['nama_prodi'] ?></td>
                             <td class="text-center">
-                                <a href="<?= base_url('DashboardDosen/cetakSuratTugas/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info"><i class="fas fa-print"></i> Cetak Surat Tugas</a>
+                                <a href="<?= base_url('DashboardDosen/cetakSuratUndangan/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info"><i class="fas fa-print"></i> Cetak Surat Undangan</a>
                             </td>
                         </tr>
                     <?php } ?>
-                    <?php $no = 1;
-                    foreach ($mhs2 as $key => $mhs) {                     ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td class="text-center"><?= $mhs['npm'] ?></td>
-                            <td><?= $mhs['nama_mahasiswa'] ?></td>
-                            <td><?= $mhs['nama_prodi'] ?></td>
-                            <td class="text-center">
-                                <a href="<?= base_url('DashboardDosen/cetakSuratTugas2/' . $mhs['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info"><i class="fas fa-print"></i> Cetak Surat Tugas</a>
-                            </td>
-                        </tr>
-                    <?php } ?>
+
 
                 </tbody>
             </table>
