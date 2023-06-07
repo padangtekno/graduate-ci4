@@ -93,4 +93,17 @@ class DashboardStaf extends BaseController
         ];
         return view('v_template_staf', $data);
     }
+
+    public function detailWisudawan($npm)
+    {
+        $data = [
+            'judul' => 'Cek Pendaftaran Masuk',
+            'menu'  => 'pendaftaranmasuk',
+            'submenu'  => '',
+            'page'  => 'staf/v_detail_wisudawan',
+            'mhs'   => $this->ModelDashboardStaf->cekPendaftaranMasuk($npm),
+            'dokumen'   => $this->ModelDashboardStaf->allDokumen($npm),
+        ];
+        return view('v_template_staf', $data);
+    }
 }
