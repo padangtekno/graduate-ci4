@@ -24,7 +24,7 @@
             <table class="table table-borderless table-sm">
                 <h4 class="text-center"><b>Formulir Pendaftaran Wisuda</b></h4>
                 <tr>
-                    <td rowspan="17" class="text-center">
+                    <td rowspan="17" width="250px" class="text-center">
                         <img src="<?= base_url('foto/' . $mhs['foto']) ?>" id="gambar_load" width="150px" height="200" style="border: 2px; border-style: solid; border-color: #000;">
                     </td>
 
@@ -147,9 +147,8 @@
                 <?php } ?>
             </table>
 
-           
+
         </div>
     </div>
 
 </div>
-

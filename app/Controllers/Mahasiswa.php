@@ -34,6 +34,8 @@ class Mahasiswa extends BaseController
             'nama_mahasiswa' => $this->request->getPost('nama_mahasiswa'),
             'id_prodi' => $this->request->getPost('id_prodi'),
             'password' => $this->request->getPost('npm'),
+            'status_dokumen' => 0,
+            'status_pendaftaran' => 0,
         ];
         $this->ModelMahasiswa->insertData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan !');
