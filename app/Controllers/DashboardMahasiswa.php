@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ModelPendaftaran;
 use App\Models\ModelProdi;
 use App\Models\ModelDosen;
+use App\Models\ModelPersyaratan;
 
 class DashboardMahasiswa extends BaseController
 {
@@ -15,6 +16,7 @@ class DashboardMahasiswa extends BaseController
         $this->ModelPendaftaran = new ModelPendaftaran();
         $this->ModelProdi = new ModelProdi();
         $this->ModelDosen = new ModelDosen();
+        $this->ModelPersyaratan = new ModelPersyaratan();
     }
 
     public function index()
@@ -24,6 +26,7 @@ class DashboardMahasiswa extends BaseController
             'menu' => 'dashboard',
             'page'  => 'mahasiswa/v_dashboard',
             'mhs'   => $this->ModelPendaftaran->dataMahasiswa(),
+            'persyaratan' => $this->ModelPersyaratan->allData(),
         ];
         return view('v_template_mahasiswa', $data);
     }

@@ -52,7 +52,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?= base_url() ?>">Home</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url('Home/calonWisudawan') ?>">Calon Wisudawan</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="<?= base_url('Home/calonWisudawan') ?>">Calon Wisudawan</a></li> -->
                     <li><a class="nav-link scrollto" href="<?= base_url('Home/persyaratan') ?>">Persyaratan</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     <li><a class="getstarted scrollto" href="<?= base_url('Auth/Login') ?>">Login</a></li>

@@ -19,10 +19,15 @@ class DashboardDosen extends BaseController
 
     public function index()
     {
+
         $data = [
             'judul' => 'Dashboard Dosen',
             'menu' => 'dashboard',
             'page'  => 'dosen/v_dashboard',
+            'total_surat_tugas1' =>  $this->ModelDashboardDosen->totalDataMahasiswaBimbinganIlmu(),
+            'total_surat_tugas2' =>  $this->ModelDashboardDosen->totalDataMahasiswaBimbinganAgama(),
+            'total_surat_undangan' =>  $this->ModelDashboardDosen->totalDataSuratUndangan(),
+            'total_berita_acara' =>  $this->ModelDashboardDosen->totalDataBeritaAcara(),
         ];
         return view('v_template_dosen', $data);
     }
