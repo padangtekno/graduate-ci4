@@ -77,7 +77,7 @@ class Filters extends BaseConfig
                     'Dosen', 'Dosen/*',
                     'Mahasiswa', 'Mahasiswa/*',
                     'Staf', 'Staf/*',
-                    'BeritaAcara', 'BeritaAcara/*',
+                    'Berkas', 'Berkas/*',
                     'Tendik', 'Tendik/*',
                 ]
             ],

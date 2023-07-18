@@ -184,9 +184,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('BeritaAcara') ?>" class="nav-link <?= $menu == 'beritaacara' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Berkas') ?>" class="nav-link <?= $menu == 'berkas' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-file"></i>
-                                <p>Berita Acara</p>
+                                <p>Berkas</p>
                             </a>
                         </li>
 
