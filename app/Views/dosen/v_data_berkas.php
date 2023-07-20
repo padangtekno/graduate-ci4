@@ -18,7 +18,7 @@
                         <th>NPM</th>
                         <th>Nama Mahasiswa</th>
                         <th>Program Studi</th>
-                        <th>Print</th>
+                        <th>Berkas</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,11 @@
                             <td><?= $value['nama_mahasiswa'] ?></td>
                             <td><?= $value['nama_prodi'] ?></td>
                             <td class="text-center">
-                                <a href="<?= base_url('DashboardDosen/cetakSuratTugas/' . $value['id_mahasiswa']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info"><i class="fas fa-print"></i> Cetak Surat Tugas</a>
+
+                                <a href="<?= base_url('dokumen/' . $value['file_berita_acara']) ?>" target="_blank" class="btn btn-flat btn-xs btn-success <?= $value['status_file_berita_acara'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Berita Acara</a>
+                                <a href="<?= base_url('dokumen/' . $value['file_undangan']) ?>" target="_blank" class="btn btn-flat btn-xs btn-primary <?= $value['status_file_undangan'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Undangan</a>
+                                <a href="<?= base_url('dokumen/' . $value['file_surat_tugas']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info <?= $value['status_file_surat_tugas'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Surat Tugas</a>
+                                <a href="<?= base_url('dokumen/' . $value['file_surat_tugas_penguji']) ?>" target="_blank" class="btn btn-flat btn-xs btn-danger <?= $value['status_file_surat_tugas_penguji'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Surat Tugas Penguji</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -53,3 +57,17 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "paging": true,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script>

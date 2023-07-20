@@ -185,4 +185,37 @@ class Berkas extends BaseController
             return redirect()->to('Berkas')->withInput();
         }
     }
+   
+    public function uploadSTP($id_mahasiswa)
+    {
+        if ($this->validate([
+            'file_surat_tugas_penguji' => [
+                'label' => 'File SKL',
+                'rules'  => 'max_size[file_surat_tugas_penguji,2048]|ext_in[file_surat_tugas_penguji,pdf]',
+                'errors' => [
+                    'max_size' => '{field} Tidak Boleh Lebih Dari 2048 KB',
+                    'ext_in' => 'File Hanya Boleh Berformat pdf',
+                ]
+            ],
+        ])) {
+            # jika lolos validasi
+            $file_surat_tugas_penguji = $this->request->getFile('file_surat_tugas_penguji');
+            $nama_file = $file_surat_tugas_penguji->getRandomName();
+
+            $data = [
+                'id_mahasiswa' => $id_mahasiswa,
+                'status_file_surat_tugas_penguji' => 1,
+                'file_surat_tugas_penguji'  => $nama_file,
+            ];
+            $file_surat_tugas_penguji->move('dokumen', $nama_file);
+            $this->ModelBerkas->updateBerkas($data);
+            session()->setFlashdata('pesan', 'File SKL Berhasil Di Update !!');
+            return redirect()->to('Berkas');
+        } else {
+            # jika gagal validasi
+            return redirect()->to('Berkas')->withInput();
+        }
+    }
+
+    
 }

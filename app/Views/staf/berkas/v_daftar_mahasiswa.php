@@ -51,6 +51,7 @@
                                 <a href="<?= base_url('dokumen/' . $value['file_undangan']) ?>" target="_blank" class="btn btn-flat btn-xs btn-primary <?= $value['status_file_undangan'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Undangan</a>
                                 <a href="<?= base_url('dokumen/' . $value['file_surat_tugas']) ?>" target="_blank" class="btn btn-flat btn-xs btn-info <?= $value['status_file_surat_tugas'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Surat Tugas</a>
                                 <a href="<?= base_url('dokumen/' . $value['file_skl']) ?>" target="_blank" class="btn btn-flat btn-xs btn-warning <?= $value['status_file_skl'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> SKL</a>
+                                <a href="<?= base_url('dokumen/' . $value['file_surat_tugas_penguji']) ?>" target="_blank" class="btn btn-flat btn-xs btn-danger <?= $value['status_file_surat_tugas_penguji'] == 0 ? 'disabled' : '' ?>"><i class="fas fa-print"></i> Surat Tugas Penguji</a>
                             </td>
                             <td class="text-center">
                                 <div class="btn-group">
@@ -63,6 +64,7 @@
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#upload2<?= $value['id_mahasiswa'] ?>">Undangan</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#upload3<?= $value['id_mahasiswa'] ?>">Surat Tugas</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#upload4<?= $value['id_mahasiswa'] ?>">SKL</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#upload5<?= $value['id_mahasiswa'] ?>">Surat Tugas Penguji</a>
                                     </div>
                                 </div>
                             </td>
@@ -199,6 +201,38 @@ foreach ($mhs as $key => $value) { ?>
         <!-- /.modal-dialog -->
     </div>
 <?php } ?>
+
+<!-- Modal upload SKL -->
+<?php $no = 1;
+foreach ($mhs as $key => $value) { ?>
+    <div class="modal fade" id="upload5<?= $value['id_mahasiswa'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><?= $value['nama_mahasiswa'] ?></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <?= form_open_multipart('Berkas/uploadSTP/' . $value['id_mahasiswa']) ?>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Upload File Surat Tugas Penguji</label>
+                        <input type="file" name="file_surat_tugas_penguji" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                </div>
+                <?= form_close() ?>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<?php } ?>
+
 
 
 <script>

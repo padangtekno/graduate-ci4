@@ -14,13 +14,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= base_url('back') ?>/plugins/fontawesome-free/css/all.min.css">
+    
+     <!-- DataTables -->
+     <link rel="stylesheet" href="<?= base_url('back') ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url('back') ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url('back') ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('back') ?>/dist/css/adminlte.min.css">
+
 
     <!-- jQuery -->
     <script src="<?= base_url('back') ?>/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?= base_url('back') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="<?= base_url('back') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/jszip/jszip.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="<?= base_url('back') ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('back') ?>/dist/js/adminlte.min.js"></script>
 </head>
@@ -91,25 +110,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                         <li class="nav-item">
-                            <a href="<?= base_url('DashboardDosen/suratTugas') ?>" class="nav-link <?= $menu == 'surattugas' ? 'active' : '' ?>">
+                            <a href="<?= base_url('DashboardDosen/berkas') ?>" class="nav-link <?= $menu == 'berkas' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-file"></i>
-                                <p>Surat Tugas</p>
+                                <p>Berkas</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="<?= base_url('DashboardDosen/suratUndangan') ?>" class="nav-link <?= $menu == 'suratundangan' ? 'active' : '' ?>">
-                                <i class="nav-icon fas fa-file-alt"></i>
-                                <p>Surat Undangan</p>
-                            </a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a href="<?= base_url('DashboardDosen/beritaAcara') ?>" class="nav-link <?= $menu == 'beritaacara' ? 'active' : '' ?>">
-                                <i class="nav-icon fab fa-wpforms"></i>
-                                <p>Berita Acara</p>
-                            </a>
-                        </li>
 
                     </ul>
                 </nav>

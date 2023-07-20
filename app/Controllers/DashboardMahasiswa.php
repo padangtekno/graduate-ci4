@@ -7,6 +7,7 @@ use App\Models\ModelPendaftaran;
 use App\Models\ModelProdi;
 use App\Models\ModelDosen;
 use App\Models\ModelPersyaratan;
+use App\Models\ModelBerkas;
 
 class DashboardMahasiswa extends BaseController
 {
@@ -17,6 +18,7 @@ class DashboardMahasiswa extends BaseController
         $this->ModelProdi = new ModelProdi();
         $this->ModelDosen = new ModelDosen();
         $this->ModelPersyaratan = new ModelPersyaratan();
+        $this->ModelBerkas = new ModelBerkas();
     }
 
     public function index()
@@ -181,5 +183,67 @@ class DashboardMahasiswa extends BaseController
             'mhs'   => $this->ModelPendaftaran->dataMahasiswa(),
         ];
         return view('mahasiswa/v_cetak_formulir_pengambilan_ijazah', $data);
+    }
+
+    public function uploadArtikel($id_mahasiswa)
+    {
+        if ($this->validate([
+            'file_artikel' => [
+                'label' => 'File Artikel',
+                'rules'  => 'max_size[file_artikel,2048]|ext_in[file_artikel,pdf]',
+                'errors' => [
+                    'max_size' => '{field} Tidak Boleh Lebih Dari 2048 KB',
+                    'ext_in' => 'File Hanya Boleh Berformat pdf',
+                ]
+            ],
+        ])) {
+            # jika lolos validasi
+            $file_artikel = $this->request->getFile('file_artikel');
+            $nama_file = $file_artikel->getRandomName();
+
+            $data = [
+                'id_mahasiswa' => $id_mahasiswa,
+                'status_file_artikel' => 1,
+                'file_artikel'  => $nama_file,
+            ];
+            $file_artikel->move('dokumen', $nama_file);
+            $this->ModelBerkas->updateBerkas($data);
+            session()->setFlashdata('pesan', 'File Artikel Berhasil Di Upload !!');
+            return redirect()->to('DashboardMahasiswa/skl');
+        } else {
+            # jika gagal validasi
+            return redirect()->to('DashboardMahasiswa/skl')->withInput();
+        }
+    }
+
+    public function uploadPengesahan($id_mahasiswa)
+    {
+        if ($this->validate([
+            'file_pengesahan' => [
+                'label' => 'File Pengesahan',
+                'rules'  => 'max_size[file_pengesahan,2048]|ext_in[file_pengesahan,pdf]',
+                'errors' => [
+                    'max_size' => '{field} Tidak Boleh Lebih Dari 2048 KB',
+                    'ext_in' => 'File Hanya Boleh Berformat pdf',
+                ]
+            ],
+        ])) {
+            # jika lolos validasi
+            $file_pengesahan = $this->request->getFile('file_pengesahan');
+            $nama_file = $file_pengesahan->getRandomName();
+
+            $data = [
+                'id_mahasiswa' => $id_mahasiswa,
+                'status_file_pengesahan' => 1,
+                'file_pengesahan'  => $nama_file,
+            ];
+            $file_pengesahan->move('dokumen', $nama_file);
+            $this->ModelBerkas->updateBerkas($data);
+            session()->setFlashdata('pesan', 'File Pengesahan Berhasil Di Upload !!');
+            return redirect()->to('DashboardMahasiswa/skl');
+        } else {
+            # jika gagal validasi
+            return redirect()->to('DashboardMahasiswa/skl')->withInput();
+        }
     }
 }
